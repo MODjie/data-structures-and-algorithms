@@ -51,7 +51,7 @@ public class CircleSingleLinkList<T> {
             return;
         }
         Node<T> addNode = new Node<>(data, this.first);
-        this.get(size-1).setNext(addNode);
+        this.getNode(size-1).setNext(addNode);
         size++;
     }
 
@@ -79,14 +79,18 @@ public class CircleSingleLinkList<T> {
         if (index > size -1){
             throw new RuntimeException("超出当前链表长度："+size);
         }
-        Node<T> oldNode = this.get(index);
+        Node<T> oldNode = this.getNode(index);
         Node<T> updateNode = new Node<>(data,oldNode.getNext());
-        this.get(index-1).setNext(updateNode);
+        this.getNode(index-1).setNext(updateNode);
+    }
+
+    public T get(int index){
+        return getNode(index).getData();
     }
 
     /**
      * <p>
-     * Title: get
+     * Title: 获取当前节点
      * </p>
      * <p>
      * Description:
@@ -98,7 +102,7 @@ public class CircleSingleLinkList<T> {
      * @date 2021年11月20日
      * @since 1.8
      */
-    public Node<T> get(int index){
+    private Node<T> getNode(int index){
         if (this.isEmpty()) {
             throw new RuntimeException("当前链表为空");
         }
@@ -128,15 +132,18 @@ public class CircleSingleLinkList<T> {
      * @date 2021年11月20日
      * @since 1.8
      */
-    public void delete(int index){
+    public void remove(int index){
         if (this.isEmpty()) {
             throw new RuntimeException("当前链表为空");
         }
         if (index > size -1){
             throw new RuntimeException("超出当前链表长度："+size);
         }
-        Node<T> preNode = this.get(index-1);
+        Node<T> preNode = this.getNode(index-1);
         Node<T> nextNode = preNode.getNext().getNext();
+        if (preNode == nextNode){
+            this.clear();
+        }
         preNode.setNext(nextNode);
         size--;
     }
@@ -176,5 +183,25 @@ public class CircleSingleLinkList<T> {
         stringBuilder.append("]");
         return stringBuilder.toString();
     }
+    
+    /**
+     * <p>
+     * Title: 清空链表
+     * </p>
+     * <p>
+     * Description:
+     * </p>
+     *
+     * @author 刘小杰
+     * @date 2021年11月21日
+     * @since 1.8
+     */
+    public void clear(){
+        this.first = null;
+        this.size = 0;
+    }
 
+    public int getSize() {
+        return size;
+    }
 }

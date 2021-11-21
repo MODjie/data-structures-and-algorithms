@@ -21,8 +21,8 @@ public class ArrayStackTest {
         System.out.println(stack.getTop());
         System.out.println(stack.isEmpty());
         stack.push(1);
-        stack.push(3);
-        stack.push(4);
+        stack.push(1);
+        stack.push(1);
         stack.push(50);
         System.out.println(stack);
         stack.pop();

@@ -46,6 +46,10 @@ public class BinaryTreeTest {
 
         System.out.println("先序查找：");
         binaryTree.preSearch(rootNode, node2, 1);
+        System.out.println("中序查找：");
+        binaryTree.middleSearch(rootNode, node2, 1);
+        System.out.println("后序查找：");
+        binaryTree.postSearch(rootNode, node2, 1);
     }
 
 }

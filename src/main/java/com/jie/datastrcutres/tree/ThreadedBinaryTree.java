@@ -24,6 +24,13 @@ public class ThreadedBinaryTree<T> {
      */
     private ThreadedBinaryTreeNode<T> preNode;
 
+    public ThreadedBinaryTreeNode<T> getRoot() {
+        return root;
+    }
+
+    public void setRoot(ThreadedBinaryTreeNode<T> root) {
+        this.root = root;
+    }
 
     /**
      * <p>
@@ -61,11 +68,33 @@ public class ThreadedBinaryTree<T> {
         }
     }
 
-    public ThreadedBinaryTreeNode<T> getRoot() {
-        return root;
-    }
-
-    public void setRoot(ThreadedBinaryTreeNode<T> root) {
-        this.root = root;
+    /**
+     * <p>
+     * Title: 遍历线索二叉树
+     * </p>
+     * <p>
+     * Description:
+     * </p>
+     *
+     * @author 刘小杰
+     * @date 2021年11月24日
+     * @since 1.8
+     */
+    public void list(){
+        if (this.root == null){
+            throw new RuntimeException("当前树为空");
+        }
+        ThreadedBinaryTreeNode<T> cursorNode = this.root;
+        while (cursorNode != null){
+            while (cursorNode.getLeftType() == ThreadedBinaryTreeNode.NORMAL_NODE){
+                cursorNode = cursorNode.getLeft();
+            }
+            System.out.print(cursorNode+" ");
+            while (cursorNode.getRightType() == ThreadedBinaryTreeNode.THREADED_NODE){
+                cursorNode = cursorNode.getRight();
+                System.out.print(cursorNode+" ");
+            }
+            cursorNode = cursorNode.getRight();
+        }
     }
 }

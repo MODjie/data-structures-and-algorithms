@@ -36,6 +36,7 @@ public class ThreadedBinaryTreeTest {
         node4.setRight(node8);
         System.out.println("中序线索化：");
         threadedBinaryTree.middleSortCueing(rootNode);
+        threadedBinaryTree.list();
         System.out.println();
     }
 

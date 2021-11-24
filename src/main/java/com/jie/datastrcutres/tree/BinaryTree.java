@@ -42,7 +42,7 @@ public class BinaryTree<T> {
      */
     public void preSort(TreeNode<T> parentNode){
         if (parentNode == null){
-            System.out.println("当前树为空");
+            System.out.println("当前节点为空");
             return;
         }
         System.out.print(parentNode+" ");
@@ -71,7 +71,7 @@ public class BinaryTree<T> {
      */
     public void preSearch(TreeNode<T> parentNode,TreeNode<T> searchNode,int level){
         if (parentNode == null){
-            System.out.println("当前树为空");
+            System.out.println("当前节点为空");
             return;
         }
         if (parentNode.equals(searchNode)){
@@ -109,7 +109,7 @@ public class BinaryTree<T> {
      */
     public void middleSort(TreeNode<T> parentNode){
         if (parentNode == null){
-            System.out.println("当前树为空");
+            System.out.println("当前节点为空");
             return;
         }
         if (parentNode.getLeft()!=null){
@@ -138,7 +138,7 @@ public class BinaryTree<T> {
      */
     public void middleSearch(TreeNode<T> parentNode,TreeNode<T> searchNode,int level){
         if (parentNode == null){
-            System.out.println("当前树为空");
+            System.out.println("当前节点为空");
             return;
         }
         if (parentNode.getLeft()!=null){
@@ -177,7 +177,7 @@ public class BinaryTree<T> {
      */
     public void postSort(TreeNode<T> parentNode){
         if (parentNode == null){
-            System.out.println("当前树为空");
+            System.out.println("当前节点为空");
             return;
         }
         if (parentNode.getLeft()!=null){
@@ -206,7 +206,7 @@ public class BinaryTree<T> {
      */
     public void postSearch(TreeNode<T> parentNode,TreeNode<T> searchNode,int level){
         if (parentNode == null){
-            System.out.println("当前树为空");
+            System.out.println("当前节点为空");
             return;
         }
         if (parentNode.getLeft()!=null){

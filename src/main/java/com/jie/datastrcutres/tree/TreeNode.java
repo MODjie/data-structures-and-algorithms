@@ -29,6 +29,64 @@ public class TreeNode<T> {
      */
     private TreeNode<T> right;
 
+    /**
+     * <p>
+     * Title: 获取当前节点的高度
+     * </p>
+     * <p>
+     * Description:
+     * </p>
+     *
+     * @return int
+     * @author 刘小杰
+     * @date 2021年11月28日
+     * @since 1.8
+     */
+    public int getHeight(){
+        return Math.max(this.left == null ? 0 : this.left.getHeight(),this.right == null ? 0: this.right.getHeight()) +1;
+    }
+
+
+    /**
+     * <p>
+     * Title: 获取左子树的高度
+     * </p>
+     * <p>
+     * Description:
+     * </p>
+     *
+     * @return int
+     * @author 刘小杰
+     * @date 2021年11月28日
+     * @since 1.8
+     */
+    public int getLeftChildHeight(){
+        if (this.left == null){
+            return 0;
+        }
+        return this.left.getHeight();
+    }
+
+    /**
+     * <p>
+     * Title: 获取右子树的高度
+     * </p>
+     * <p>
+     * Description:
+     * </p>
+     *
+     * @return int
+     * @author 刘小杰
+     * @date 2021年11月28日
+     * @since 1.8
+     */
+    public int getRightChildHeight(){
+        if (this.right == null){
+            return 0;
+        }
+        return this.right.getHeight();
+    }
+
     public T getData() {
         return data;
     }

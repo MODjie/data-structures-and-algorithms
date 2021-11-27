@@ -86,7 +86,7 @@ public class BinarySortTree {
      * @date 2021年11月27日
      * @since 1.8
      */
-    private void addRecursion(TreeNode<Integer> parentNode, TreeNode<Integer> addNode) {
+    protected void addRecursion(TreeNode<Integer> parentNode, TreeNode<Integer> addNode) {
         if (addNode.getData()<=parentNode.getData()){
             if (parentNode.getLeft()==null){
                 parentNode.setLeft(addNode);
@@ -297,5 +297,13 @@ public class BinarySortTree {
             return this.findTargetParentPreNode(targetNode.getLeft());
         }
         return targetNode;
+    }
+
+    public TreeNode<Integer> getRootNode() {
+        return rootNode;
+    }
+
+    public void setRootNode(TreeNode<Integer> rootNode) {
+        this.rootNode = rootNode;
     }
 }

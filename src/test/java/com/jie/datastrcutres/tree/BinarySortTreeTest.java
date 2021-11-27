@@ -18,6 +18,8 @@ public class BinarySortTreeTest {
         int [] dataSource = new int[]{62,88,58,47,35,73,51,99,37,93};
         BinarySortTree binarySortTree = new BinarySortTree(dataSource);
         binarySortTree.middleSort();
+        binarySortTree.remove(93);
+        binarySortTree.middleSort();
     }
 
 }
